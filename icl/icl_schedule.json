@@ -1,0 +1,58 @@
+[
+  {
+    "question": "What would happen if we exchanged the locations of job 13 and job 80 on machine 2? Utilize the current scheduling algorithm to develop a fresh timetable.",
+    "code": "schedule_m = data['schedule'][2]\n\ni_idx = schedule_m.index(13)\n\nj_idx = schedule_m.index(80)\n\nschedule_m[i_idx], schedule_m[j_idx] = schedule_m[j_idx], schedule_m[i_idx]",
+    "type": 2,
+    "requires_scheduler": 1,
+    "raw_question_hash": "3aad04aad3367161f842b0d15d50c4bd66038e57835a03cdd34ef4982089a2eb"
+  },
+  {
+    "question": "How would it affect things if we exchanged job 28 on machine 6 with job 56 on machine 2? Utilize the current scheduling algorithm to develop a fresh timetable.",
+    "code": "schedule_m1 = data['schedule'][6]\n\nschedule_m2 = data['schedule'][2]\n\ni_idx = schedule_m1.index(28)\n\nj_idx = schedule_m2.index(56)\n\nschedule_m1[i_idx], schedule_m2[j_idx] = schedule_m2[j_idx], schedule_m1[i_idx]",
+    "type": 2,
+    "requires_scheduler": 1,
+    "raw_question_hash": "7e8cdf81a066887d4c291a4c5555db71e0e93e02d6690e2f58802d6f342c9bb6"
+  },
+  {
+    "question": "Can you utilize the current scheduling algorithm to formulate a new timetable? What would happen if we shifted job 58 on machine 0 to take place right before job 66 on that same machine?",
+    "code": "schedule_m = data['schedule'][0]\ni_idx = schedule_m.index(58)\njob = schedule_m.pop(i_idx)\nj_idx = schedule_m.index(66)\nschedule_m.insert(j_idx, job)",
+    "type": 2,
+    "requires_scheduler": 1,
+    "raw_question_hash": "a029221c745f5925d25f7652e908f9029ea8f420f37c93ce4d0dad4bf91302df"
+  },
+  {
+    "question": "What would happen if we relocated job 2 from machine 9 to immediately follow job 96 on machine 7? Make minimal repairs while sticking to the existing timeline.",
+    "code": "schedule_m1 = data['schedule'][9]\nschedule_m2 = data['schedule'][7]\njob = schedule_m1.pop(schedule_m1.index(2))\nj_idx = schedule_m2.index(96)\nschedule_m2.insert(j_idx + 1, job)",
+    "type": 2,
+    "requires_scheduler": 0,
+    "raw_question_hash": "7f34e290792b02e4e11e41fe5fa5d3953bf3aa3bf00c21afdf8d5a1874141740"
+  },
+  {
+    "question": "Make only essential repairs without disrupting the existing timetable. What would happen if we exchanged the locations of job 69 and job 95 on machine 2?",
+    "code": "schedule_m = data['schedule'][2]\n\ni_idx = schedule_m.index(69)\n\nj_idx = schedule_m.index(95)\n\nschedule_m[i_idx], schedule_m[j_idx] = schedule_m[j_idx], schedule_m[i_idx]",
+    "type": 2,
+    "requires_scheduler": 0,
+    "raw_question_hash": "017a59cfc81bc4e59ba24cbaa36471f89618e12f70e5c580e99e30223e9a33ee"
+  },
+  {
+    "question": "How would it affect things if we exchanged job 75 on machine 8 with job 99 on machine 5? Make only essential repairs while sticking to the existing timeline.",
+    "code": "schedule_m1 = data['schedule'][8]\n\nschedule_m2 = data['schedule'][5]\n\ni_idx = schedule_m1.index(75)\n\nj_idx = schedule_m2.index(99)\n\nschedule_m1[i_idx], schedule_m2[j_idx] = schedule_m2[j_idx], schedule_m1[i_idx]",
+    "type": 2,
+    "requires_scheduler": 0,
+    "raw_question_hash": "24e8724be3d1f71846b9da5bcc5065d2bd6fbaf978a285def30beacfaa50f2ad"
+  },
+  {
+    "question": "Utilize the current scheduling algorithm to develop a new timetable. What would happen if we repositioned job 58 on machine 0 to take place right after job 66 on that machine?",
+    "code": "schedule_m = data['schedule'][0]\ni_idx = schedule_m.index(58)\njob = schedule_m.pop(i_idx)\nj_idx = schedule_m.index(66)\nschedule_m.insert(j_idx + 1, job)",
+    "type": 2,
+    "requires_scheduler": 1,
+    "raw_question_hash": "d0083b0e19763987e24dab342ed4d618903770119d76b9cdebd39e15461b6b79"
+  },
+  {
+    "question": "How would it impact things if we shifted job 2 from machine 9 to right before job 96 on machine 7? Make the necessary small repairs without disrupting the existing timetable.",
+    "code": "schedule_m1 = data['schedule'][9]\nschedule_m2 = data['schedule'][7]\njob = schedule_m1.pop(schedule_m1.index(2))\nj_idx = schedule_m2.index(96)\nschedule_m2.insert(j_idx, job)",
+    "type": 2,
+    "requires_scheduler": 0,
+    "raw_question_hash": "1869d63407caeb18e86fadf3e437bed918bbbb56fb75ada1e9b3ccc9f3245b5e"
+  }
+]

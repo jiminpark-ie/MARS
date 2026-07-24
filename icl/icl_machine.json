@@ -1,0 +1,30 @@
+[
+  {
+    "question": "What would happen if job 66 is only able to be handled by machine 4? Utilize the current scheduling algorithm to develop a new timetable.",
+    "code": "data['machine_eligibility'][:, 66] = 0\ndata['machine_eligibility'][4, 66] = 1",
+    "type": 1,
+    "requires_scheduler": 1,
+    "raw_question_hash": "97b5e7b4edb0747361b0831ce175efb89f8ab3c46e91ef2a6dcb8a54c21800d1"
+  },
+  {
+    "question": "What will happen if machine 7 malfunctions and can no longer be used? Make only necessary repairs while keeping the existing timeline intact.",
+    "code": "data['machine_eligibility'][7, :] = 0",
+    "type": 1,
+    "requires_scheduler": 0,
+    "raw_question_hash": "67957dd0977208b58162d4537d9ff826fa575712127f9088e229bf766d0f6589"
+  },
+  {
+    "question": "Utilize the current scheduling algorithm to develop a fresh timetable. What happens if job 32 can only be carried out on machine 0?",
+    "code": "data['machine_eligibility'][:, 32] = 0\ndata['machine_eligibility'][0, 32] = 1",
+    "type": 1,
+    "requires_scheduler": 1,
+    "raw_question_hash": "d6dd22976221d2bcc74de0b4943c3a0ade61f2a5b3907012992d80083b3d208c"
+  },
+  {
+    "question": "What happens if machine 8 malfunctions and can't be used anymore? Make only essential repairs without altering the existing timetable.",
+    "code": "data['machine_eligibility'][8, :] = 0",
+    "type": 1,
+    "requires_scheduler": 0,
+    "raw_question_hash": "7f3c00f93e6cc2d8eb2f2dda24c91f7b6f1ef96a8f29c3c31451dc9adb2960f9"
+  }
+]

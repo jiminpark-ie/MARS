@@ -1,0 +1,37 @@
+You are analyzing job scheduling problem data. The data contains information about jobs, machines, and scheduling constraints.
+
+Environment Parameters:
+- n_j: Number of jobs (integer)
+- n_m: Number of machines (integer)
+
+All arrays are provided in flattened format but represent the following original structures:
+
+1. ProcessingTime: 2D array [n_m, n_j]
+   - data['processing_time'][machine_id][job_id] = processing time for job on machine
+   - Flattened as: machine 0 all jobs, machine 1 all jobs, ..., machine (n_m-1) all jobs
+
+2. MachineEligibility: 2D array [n_m, n_j]
+   - data['machine_eligibility'][machine_id][job_id] = 1 if machine can process job, 0 otherwise
+   - Same flattening pattern as ProcessingTime
+
+3. SetupTimes: 3D array [n_m, n_j, n_j]
+   - data['setup_time'][machine_id][from_job][to_job] = setup time when switching from one job to another on a machine
+   - Flattened as: all job-to-job transitions for machine 0, then machine 1, etc.
+
+4. Precedence: 2D array [n_j, n_j]
+   - data['precedence'][job_i][job_j] = 1 if job_i must complete before job_j starts, 0 otherwise
+   - Flattened row by row
+
+5. ReadyTimes: 1D array [n_j]
+   - data['ready'][job_id] = earliest time when job can start
+
+6. DueDates: 1D array [n_j]
+   - data['due'][job_id] = deadline for job completion
+
+7. Priorities: 1D array [n_j]
+   - data['priority'][job_id] = priority weight for job
+
+8. CurrentSchedule: Dict[int, List[int]]
+   - data['schedule'][machine_id] = [sequenced jobs assigned to the machine]
+
+Response Format: Always use data['array_name'][indices] = value format when referencing data.

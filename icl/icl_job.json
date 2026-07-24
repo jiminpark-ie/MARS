@@ -1,0 +1,44 @@
+[
+  {
+    "question": "What happens if job 10 needs to be finished before job 11 can begin? Utilize the current scheduling algorithm to develop a new timetable.",
+    "code": "data['precedence'][10][11] = 1",
+    "type": 0,
+    "requires_scheduler": 1,
+    "raw_question_hash": "abec27589a839924afc9cb756699cf6ad68ba1a5a8151e47a2821a52cb503d45"
+  },
+  {
+    "question": "Utilize the current scheduling algorithm to develop a fresh timetable. What would happen if the processing time for job 56 on machine 7 is adjusted to 23?",
+    "code": "data['processing_time'][7, 56] = 23",
+    "type": 0,
+    "requires_scheduler": 1,
+    "raw_question_hash": "b8f21eb407b7b785bfdd2e91d33362fd3866a3166050dfc6b4b2eeb86be90aa8"
+  },
+  {
+    "question": "What would happen if the deadline for job 89 was altered to the 5th? Utilize the current scheduling algorithm to develop a fresh timetable.",
+    "code": "data['due'][89] = 5",
+    "type": 0,
+    "requires_scheduler": 1,
+    "raw_question_hash": "6bff02e74dfc5bae87f5cc975813b51f7bffad226e81c98fa4897a3617d9b69e"
+  },
+  {
+    "question": "How would it affect things if the ready time for job 17 is adjusted to 87? Make only essential repairs while sticking to the existing timetable.",
+    "code": "data['ready'][17] = 87",
+    "type": 0,
+    "requires_scheduler": 0,
+    "raw_question_hash": "a6a395d2014c24cb367d36d6c5821737ae42156d845b72b5a336600bf71b122a"
+  },
+  {
+    "question": "How would it affect things if the setup time on machine 8 between job 97 and job 66 is adjusted to 11? Utilize the current scheduling algorithm to develop a fresh timetable.",
+    "code": "data['setup_time'][8, 97, 66] = 11",
+    "type": 0,
+    "requires_scheduler": 1,
+    "raw_question_hash": "bcbbd8d032ea03635af0aeb0af051d4e21d282fbfe91ff72d95d8917d58fc693"
+  },
+  {
+    "question": "Make only essential repairs while keeping the existing timetable intact. What would happen if we prioritized job 9 above all others?",
+    "code": "data['priority'][9] = float('inf')",
+    "type": 0,
+    "requires_scheduler": 0,
+    "raw_question_hash": "15befa388814972674c6ae7e3b5d79d75d513259136b2bc56befc3f5d25cea2d"
+  }
+]
