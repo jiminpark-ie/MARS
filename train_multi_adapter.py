@@ -19,7 +19,7 @@ from transformers import (
     TrainingArguments,
 )
 
-from runtime_config import (
+from config import (
     add_auth_args,
     apply_auth_args_to_env,
     resolve_hf_token,
