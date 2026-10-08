@@ -47,7 +47,7 @@ def generate_paraphrased_question(
             temperature=temperature,
         )
         return response.choices[0].message.content.strip()
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         if strict:
             raise
         print(f"Error generating paraphrased question: {e}")
