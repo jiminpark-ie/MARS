@@ -158,9 +158,6 @@ def run(cfg, backend, datasets, routing, with_codebert):
     return summary, rows
 
 
-# reporting
-
-
 def _block(summary, kind, methods, c_values, metric, label, fmt="{:7.4f}"):
     present = [m for m in methods if any((m, kind, c) in summary for c in c_values)]
     if not present:
@@ -276,9 +273,6 @@ def save_datasets_json(datasets, cfg, prefix, include_data0=False):
     print(f"[save-data] saved {len(all_records)} records: {all_path}", flush=True)
 
 
-# main
-
-
 def save_results_rows(rows, prefix):
     if not rows:
         print("[save-results] no per-result rows to save")
@@ -340,7 +334,7 @@ def parse_args():
     p.add_argument("--no-outcome", action="store_true")
     p.add_argument("--evaluate-outcome", action="store_true")
     p.add_argument("--paraphrase", action="store_true")
-    p.add_argument("--no-codebert", action="store_true", help="skip CodeBERTScore (no model download)")
+    p.add_argument("--no-codebert", action="store_true")
     p.add_argument("--n-per-c", type=int, default=200)
     p.add_argument("--c", type=int, nargs="+", default=[4, 5])
     p.add_argument("--n-repeats", type=int, default=1)
