@@ -20,7 +20,6 @@ def functional_correctness(predictions: List[str], labels: List[str]) -> float:
 
 
 def chrf(predictions: List[str], labels: List[str]) -> float:
-    """Mean sentence-level chrF++ over non-empty pairs."""
     try:
         from sacrebleu.metrics import CHRF
     except Exception:
@@ -37,7 +36,6 @@ def chrf(predictions: List[str], labels: List[str]) -> float:
 
 def codebert(predictions: List[str], labels: List[str],
              lang: str = "python") -> Dict[str, float]:
-    """CodeBERTScore precision/recall/F1 (means over non-empty pairs)."""
     pairs = [(p, l) for p, l in zip(predictions, labels)
              if p.strip() and l.strip()]
     if not pairs:
