@@ -163,8 +163,6 @@ def _split_and_classify(inst, backend, cfg) -> Tuple[List[Dict[str, Any]], int, 
 
 
 def monolithic(inst, backend, cfg) -> MethodResult:
-    """One generation for the whole combined query, using the union of all
-    level-specific ICL pools."""
     gen_log = []
     fewshot = backend.get_fewshot_all()
     mt = _token_budget(inst.c, has_schedule=True)
